@@ -1,0 +1,15 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap/bootstrap.min.css' %}">
+    <link href="{% static 'website/css/website.css' %}" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,300,300italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+{%block content%}
+{%endblock%}
+</body>
+</html>

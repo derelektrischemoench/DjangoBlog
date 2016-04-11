@@ -1,0 +1,107 @@
+.date{
+    color: #888;
+    font-style: italic;
+}
+
+.title_list{
+    color: #008fff;
+    text-decoration: none;
+    font-size: 200;
+}
+
+title_list:hover{
+    text-decoration: none;
+}
+
+#listview_post{
+    margin-top: 8%;
+}
+
+form{
+    margin-left: 8%;
+    margin-top: 8%;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], input[type="date"] {
+	display:block;
+    width:90%;
+    border-radius: 5px;
+	margin-bottom:10px;
+	background-color: rgba(200, 200, 200, 0.7);
+}
+
+textarea{
+    width: 90%;
+}
+
+body{
+    background-color: #eee;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.pageheader-title{
+    color: #008fff;
+}
+
+#main-block{
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+#side-block{
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-top: 2%;
+    margin-left: 5%;
+}
+
+h4{
+    text-decoration: underline;
+}
+
+.list-header{
+    font-size: 430%;
+    color: #1db992;
+    margin-top: 0%;
+}
+
+#comment-block{
+    margin: 5%;
+}
+
+#comment-info{
+    font-size: 110%;
+    font-weight: bold;
+}
+
+#comment-content{
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    padding: 2%;
+}
+
+#share-link{
+    font-weight: bold;
+}
+
+#add-comment{
+    margin-top: 3%;
+}
+
+.back{
+    margin-top: 2%;
+}
+
+.detail-title{
+    margin-top: 2%;
+}
+
+#count-comment{
+    margin-top: 7%;
+}
+
+#similar-posts{
+    margin-top: 7%;
+}
