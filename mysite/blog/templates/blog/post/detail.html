@@ -7,6 +7,8 @@
     <a href="/blog/"><button type="button" class="btn btn-default back" aria-label="Left Align">
       <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
     </button></a>
+       <a href="{% url 'blog:edit_post' %}"><button type="button" class="btn btn-default back" aria-label="Left Align">Edit
+    </button></a>
     <div class="page-header detail-title">
           <h1 class="pageheader-title">{{ post.title }}<small></small></h1>
     </div>

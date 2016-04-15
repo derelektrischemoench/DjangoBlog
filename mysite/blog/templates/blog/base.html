@@ -12,11 +12,14 @@
 <body>
 <div class="container">
 <div class="row">
+    <div class="col-sm-1" id="create_block">
+        <a href="{% url 'blog:create_post' %}">Create new Post</a>
+    </div>
 <div class="col-sm-7" id="main-block">
     {% block content %}
     {% endblock %}
 </div>
-<div class="col-sm-4" id="side-block">
+<div class="col-sm-3" id="side-block">
     <div class="page-header">
         <h1 class="pageheader-side">My blog<small><br><p>This is my blog. I've written {% total_posts %} posts so far.</
 p></small></h1>

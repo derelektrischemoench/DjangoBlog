@@ -3,10 +3,12 @@ from blog.models import Post, Comment
 from django.core.paginator import Paginator, EmptyPage,\
 PageNotAnInteger
 from django.views.generic import ListView
-from blog.forms import EmailPostForm, CommentForm
+from blog.forms import EmailPostForm, CommentForm, PostForm
 from django.core.mail import send_mail
 from taggit.models import Tag
 from django.db.models import Count
+from django.http import HttpResponseRedirect
+from django.core.urlresolvers import reverse
 
 def post_list(request, tag_slug=None):
     object_list = Post.published.all()
@@ -95,3 +97,38 @@ def post_share(request, post_id):
     return render(request, 'blog/post/share.html', {'post': post,
                                                     'form': form,
                                                     'sent': sent})
+
+def create_post(request):
+    if request.method == 'POST':
+        # A comment was posted
+        post_form = PostForm(data=request.POST)
+        if post_form.is_valid():
+        # Create Comment object but don't save to database yet
+            new_post = post_form.save(commit=False)
+            new_post.status=('published')
+        # Save the comment to the database
+            new_post.save()
+            return HttpResponseRedirect(reverse('blog:post_list'))
+    else:
+        post_form = PostForm()
+
+    return render(request, 'blog/post/create_post.html',
+                  {'post_form': post_form})
+
+def edit_post(request,post):
+    obj = get_object_or_404(post)
+    if request.method == 'POST':
+        # A comment was posted
+        post_form = PostForm(data=request.POST)
+        if post_form.is_valid():
+            # Create Comment object but don't save to database yet
+            cur_post = post_form.save(commit=False)
+            cur_post.status = ('published')
+            # Save the comment to the database
+            cur_post.save()
+            return HttpResponseRedirect(reverse('blog:post_list'))
+    else:
+        post_form = PostForm(instance=obj)
+
+    return render(request, 'blog/post/edit_post.html',
+                  {'post_form': post_form})

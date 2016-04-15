@@ -54,7 +54,14 @@ body{
     background-color: #ddd;
     border-radius: 5px;
     margin-top: 2%;
-    margin-left: 5%;
+    margin-left: 10px;
+}
+
+#create_block{
+    background-color: #ddd;
+    border-radius: 5px;
+    margin-top: 2%;
+    margin-right: 10px;
 }
 
 h4{
