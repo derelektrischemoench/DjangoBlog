@@ -35,7 +35,7 @@ textarea{
 }
 
 body{
-    background-color: #eee;
+    background-color: #fff;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -44,21 +44,21 @@ body{
 }
 
 #main-block{
-    background-color: #ddd;
+    background-color: #eee;
     border-radius: 5px;
     margin-top: 2%;
     margin-bottom: 5%;
 }
 
 #side-block{
-    background-color: #ddd;
+    background-color: #eee;
     border-radius: 5px;
     margin-top: 2%;
     margin-left: 10px;
 }
 
 #create_block{
-    background-color: #ddd;
+    background-color: #eee;
     border-radius: 5px;
     margin-top: 2%;
     margin-right: 10px;

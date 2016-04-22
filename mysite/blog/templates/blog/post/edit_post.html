@@ -2,16 +2,12 @@
 {% block title %}My Blog{% endblock %}
 {% block content %}
 <div class="container-fluid">
-    <a href="/blog/">Blog</a>
-    {% if cur_post %}
-    <p>Dein Post wurde geändert!</p>
-    {% else %}
-    <h2>Ändere diesen Post</h2>
+    <a href="/blog/">Home</a>
+    <h2>Ändere deinen Post</h2>
     <form action="." method="post">
         {{ post_form.as_p }}
         {% csrf_token %}
-        <p><input type="submit" value="Ändern"></p>
+        <p><input type="submit" value="Anwenden"></p>
     </form>
-    {% endif %}
 </div>
 {% endblock %}

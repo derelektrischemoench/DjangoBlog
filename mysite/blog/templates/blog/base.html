@@ -6,15 +6,45 @@
 <head>
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'blog/css/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="{% static 'blog/css/blog.css' %}" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,300,300italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div class="container">
+<nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="/">Startpage</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/konto/">Konto</a>
+                    </li>
+                    <li>
+                        <a href="/account/">Account</a>
+                    </li>
+                    <li>
+                        <a href="/account/">Login</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+<div class="container" style="margin-top:70px;">
 <div class="row">
     <div class="col-sm-1" id="create_block">
         <a href="{% url 'blog:create_post' %}">Create new Post</a>
-        <a href="/">Go back Home</a>
     </div>
 <div class="col-sm-7" id="main-block">
     {% block content %}

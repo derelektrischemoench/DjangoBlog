@@ -106,6 +106,7 @@ def create_post(request):
         # Create Comment object but don't save to database yet
             new_post = post_form.save(commit=False)
             new_post.status=('published')
+
         # Save the comment to the database
             new_post.save()
             return HttpResponseRedirect(reverse('blog:post_list'))
@@ -115,11 +116,11 @@ def create_post(request):
     return render(request, 'blog/post/create_post.html',
                   {'post_form': post_form})
 
-def edit_post(request,post):
-    obj = get_object_or_404(post)
+def edit_post(request, post_id):
+    obj = get_object_or_404(Post, id=post_id)
     if request.method == 'POST':
         # A comment was posted
-        post_form = PostForm(data=request.POST)
+        post_form = PostForm(data=request.POST, instance=obj)
         if post_form.is_valid():
             # Create Comment object but don't save to database yet
             cur_post = post_form.save(commit=False)
@@ -132,3 +133,8 @@ def edit_post(request,post):
 
     return render(request, 'blog/post/edit_post.html',
                   {'post_form': post_form})
+
+def deleted_post(request, post_id):
+    obj = get_object_or_404(Post, id=post_id)
+    obj.delete()
+    return render(request, 'blog/post/deleted_post.html')

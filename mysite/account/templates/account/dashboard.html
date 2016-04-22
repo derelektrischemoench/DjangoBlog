@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block account %}
+    <div class="container" style="margin-top:70px;">
+        <h1>Meine Seite</h1>
+        <h3>Übersicht</h3>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Meine Uploads</h3>
+                    <p>Hier ist eine Spalte mit geteilten Bildern</p>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Meine Post</h3>
+                    <p>Hier ist eine Spalte mit den vom User verfassten Posts</p>
+                </div>
+                <div class="col-sm-3">
+                    <h3>Meine Tags, Kommentare und Likes</h3>
+                    <p>Hier ist eine Spalte mit einer Übersicht über die Aktivitäten des Nutzers bei fremden Inhalten</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

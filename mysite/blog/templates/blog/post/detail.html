@@ -1,64 +1,65 @@
-{% extends "blog/base.html" %}
-{% load blog_tags %}
+    {% extends "blog/base.html" %}
+    {% load blog_tags %}
 
-{% block title %}{{ post.title }}{% endblock %}
-{% block content %}
-   <div class="container-fluid">
-    <a href="/blog/"><button type="button" class="btn btn-default back" aria-label="Left Align">
-      <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-    </button></a>
-       <a href="{% url 'blog:edit_post' %}"><button type="button" class="btn btn-default back" aria-label="Left Align">Edit
-    </button></a>
-    <div class="page-header detail-title">
-          <h1 class="pageheader-title">{{ post.title }}<small></small></h1>
-    </div>
-    <p class="date">
-        Veröffentlicht {{ post.publish }} von {{ post.author }}
-    </p>
-    {{ post.body|markdown }}
-    <p>
-        <a href="{% url 'blog:post_share' post.id %}">
-            <p id="share-link">Teile diesen Post <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></p>
-            
-        </a>
-    </p>
-    <h2 id="similar-posts">Ähnliche Posts</h2>
-        {% for post in similar_posts %}
-            <p>
-                <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
-            </p>
-            {% empty %}
-                Noch keine ähnlichen Posts vorhanden.
-        {% endfor %}
-    {% with comments.count as total_comments %}
-        <h2 id="count-comment">
-            {{ total_comments }} Kommentare
-        </h2>
-    {% endwith %}
-    {% for comment in comments %}
-        <div class="comment container-fluid" id="comment-block">
-            <p class="info" id="comment-info">
-                Kommentar {{ forloop.counter }} von {{ comment.name }}
-                {{ comment.created }}
-            </p>
-            <article id="comment-content">
-                {{ comment.body|linebreaks }}
-            </article>
-        </div>
-        {% empty %}
-        <p>Noch keine Kommentare vorhanden.</p>
-    {% endfor %}
-    {% if new_comment %}
-        <h2>Dein Kommentar wurde hinzugefügt.</h2>
-    {% else %}
+    {% block title %}{{ post.title }}{% endblock %}
+    {% block content %}
        <div class="container-fluid">
-        <h2 id="add-comment">Füge einen Kommentar hinzu</h2>
-        <form action="." method="post">
-            {{ comment_form.as_p }}
-            {% csrf_token %}
-            <p><input type="submit" value="Hinzufügen"></p>
-        </form>
+        <a href="/blog/"><button type="button" class="btn btn-default back" aria-label="Left Align">
+          <span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
+        </button></a>
+           <a href="{% url 'blog:edit_post' post.id %}"><button type="button" class="btn btn-default back" aria-label="Left Align"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+        </button></a>
+           <a href="{% url 'blog:deleted_post' post.id %}"><button type="button" class="btn btn-default back" aria-label="Left Align"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+        </button></a>
+        <div class="page-header detail-title">
+              <h1 class="pageheader-title">{{ post.title }}<small></small></h1>
         </div>
-    {% endif %}
-    </div>
-{% endblock %}
+        <p class="date">
+            Veröffentlicht {{ post.publish }} von {{ post.author }}
+        </p>
+        {{ post.body|markdown }}
+        <p>
+            <a href="{% url 'blog:post_share' post.id %}">
+                <p id="share-link">Teile diesen Post <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span></p>
+            </a>
+        </p>
+        <h2 id="similar-posts">Ähnliche Posts</h2>
+            {% for post in similar_posts %}
+                <p>
+                    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                </p>
+                {% empty %}
+                    Noch keine ähnlichen Posts vorhanden.
+            {% endfor %}
+        {% with comments.count as total_comments %}
+            <h2 id="count-comment">
+                {{ total_comments }} Kommentare
+            </h2>
+        {% endwith %}
+        {% for comment in comments %}
+            <div class="comment container-fluid" id="comment-block">
+                <p class="info" id="comment-info">
+                    Kommentar {{ forloop.counter }} von {{ comment.name }}
+                    {{ comment.created }}
+                </p>
+                <article id="comment-content">
+                    {{ comment.body|linebreaks }}
+                </article>
+            </div>
+            {% empty %}
+            <p>Noch keine Kommentare vorhanden.</p>
+        {% endfor %}
+        {% if new_comment %}
+            <h2>Dein Kommentar wurde hinzugefügt.</h2>
+        {% else %}
+           <div class="container-fluid">
+            <h2 id="add-comment">Füge einen Kommentar hinzu</h2>
+            <form action="." method="post">
+                {{ comment_form.as_p }}
+                {% csrf_token %}
+                <p><input type="submit" value="Hinzufügen"></p>
+            </form>
+            </div>
+        {% endif %}
+        </div>
+    {% endblock %}
