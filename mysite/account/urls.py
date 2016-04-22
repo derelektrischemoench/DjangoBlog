@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^password-change/done/$',
         'django.contrib.auth.views.password_change_done',
         name='password_change_done'),
+    #url(r'^/konto/$', views.konto, name="konto")
     ]
