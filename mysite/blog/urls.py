@@ -16,5 +16,6 @@ urlpatterns = [
         name='post_share'),
     url(r'^feed/$', LatestPostsFeed(), name='post_feed'),
     url(r'^create_post/$', views.create_post, name='create_post'),
-    url(r'^edit_post/$', views.edit_post, name='edit_post')
+    url(r'^edit_post/(?P<post_id>\d+)/$', views.edit_post, name='edit_post'),
+    url(r'^deleted_post/(?P<post_id>\d+)/$', views.deleted_post, name='deleted_post')
     ]

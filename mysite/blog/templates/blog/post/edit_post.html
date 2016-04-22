@@ -3,15 +3,11 @@
 {% block content %}
 <div class="container-fluid">
     <a href="/blog/">Home</a>
-    {% if new_post %}
-    <p>Dein Post wurde hinzugefügt!</p>
-    {% else %}
-    <h2>Erstelle einen neuen Post</h2>
+    <h2>Ändere deinen Post</h2>
     <form action="." method="post">
         {{ post_form.as_p }}
         {% csrf_token %}
-        <p><input type="submit" value="Erstellen"></p>
+        <p><input type="submit" value="Anwenden"></p>
     </form>
-    {% endif %}
 </div>
 {% endblock %}
