@@ -1,0 +1,23 @@
+h1 {
+    color: red;
+}
+
+#main {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+
+	margin: 5em 5em;
+}
+
+#content{
+	flex:4;
+}
+
+#sidebar {
+	flex:2;
+}

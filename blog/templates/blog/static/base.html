@@ -4,16 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
+    <link href="{% static "blog.css"%}" rel="stylesheet">
 </head>
 <body>
-    <div id="content">
-        {% block content %}
+    <div id="main">
+        <div id="content">
+            {% block content %}
 
-        {% endblock %}
-    </div>
-    <div id="sidebar">
-        <h2>SIDEBAR: My blog</h2>
-        <p>This is my blog</p>
-    </div>
+            {% endblock %}
+        </div>
+        <div id="sidebar">
+            <h2>SIDEBAR: My blog</h2>
+            <p>This is my blog</p>
+        </div>
+    </div><!--main_end-->
 </body>
 </html>
