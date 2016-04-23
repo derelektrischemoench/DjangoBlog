@@ -25,7 +25,7 @@ def post_list(request):
 def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post, slug=post,
                              status='published',
-                             ##so far this keeps throwing errors... we need to fix it...
+                             #so far this keeps throwing errors... we need to fix it...
                              #publish_year=year,
                              #publish_month=month,
                              #publish_day=day# )
