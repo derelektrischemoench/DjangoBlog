@@ -6,12 +6,34 @@
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
+	margin-top:30px;
 }
 
 #content{
 	margin-right: 100px;
+	flex:4;
 }
 
 #sidebar{
 	border-left: 1px solid cornflowerblue;
+	padding-left: 40px;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+		-webkit-box-orient:vertical;
+		-webkit-box-direction:normal;
+		-webkit-flex-direction:column;
+		    -ms-flex-direction:column;
+		        flex-direction:column;
+    }
+
+	#sidebar {
+		border-left:none;
+		padding-left:0px;
+	}
+
+	#content{
+		margin-right:0;
+	}
 }
