@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404
-from .models import Post
+from .models import Post, Comment
+from .forms import CommentForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
 
@@ -30,9 +31,28 @@ def post_detail(request, year, month, day, post):
                              #publish_month=month,
                              #publish_day=day# )
                              )
+    #include the comments from the model we created earlier
+    #list of active comments:
+    comments = post.comments.filter(active=True)
+
+    if request.method == 'POST':
+        ##if the method is called with data, which means with POST, we submit the data contained in the
+        ##request into the form
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            new_comment = comment_form.save(commit=False)
+            new_comment.post = post
+            new_comment.save()
+        ##if the request is empty, aka an empty GET request, Django automatically supplies an empty form
+        else:
+            comment_form = CommentForm()
+
+
     return render(request,
                   'blog/static/post/detail.html',
-                  {'post': post})
+                  {'post': post,
+                   'comments': comments,
+                   'comment_form': comment_form})
 
 
 class PostListView(ListView):
