@@ -60,3 +60,4 @@ class PostListView(ListView):
     context_object_name = 'posts'
     paginate_by = 4
     template_name = 'blog/static/post/list.html'
+
