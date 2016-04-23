@@ -4,9 +4,6 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import ListView
 
 
-# Create your views here.
-
-
 def post_list(request):
     ##ab hier additions 20160421
     object_list = Post.published.all()
@@ -23,11 +20,6 @@ def post_list(request):
                   'blog/static/post/list.html',
                   {'page': page,
                    'posts': posts})
-
-    posts = Post.published.all()
-    return render(request,
-                  'blog/static/post/list.html',
-                  {'posts': posts})
 
 
 def post_detail(request, year, month, day, post):
