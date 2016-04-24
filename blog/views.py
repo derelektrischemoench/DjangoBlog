@@ -30,9 +30,9 @@ def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post, slug=post,
                              status='published',
                              #so far this keeps throwing errors... we need to fix it...or does it??
-                             #publish__year=year,
-                             #publish__month=month,
-                             #publish__day=day
+                             publish__year=year,
+                             publish__month=month,
+                             publish__day=day
                              )
 
     #include the comments from the model we created earlier
