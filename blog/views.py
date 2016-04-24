@@ -1,9 +1,12 @@
 from __future__ import unicode_literals
+
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import render, get_object_or_404
+from django.views.generic import ListView
+
 from .models import Post, Comment
 from .forms import CommentForm
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.views.generic import ListView
+
 
 def post_list(request):
     ##ab hier additions 20160421
@@ -26,11 +29,12 @@ def post_list(request):
 def post_detail(request, year, month, day, post):
     post = get_object_or_404(Post, slug=post,
                              status='published',
-                             #so far this keeps throwing errors... we need to fix it...
-                             #publish_year=year,
-                             #publish_month=month,
-                             #publish_day=day# )
+                             #so far this keeps throwing errors... we need to fix it...or does it??
+                             #publish__year=year,
+                             #publish__month=month,
+                             #publish__day=day
                              )
+
     #include the comments from the model we created earlier
     #list of active comments:
     comments = post.comments.filter(active=True)
@@ -44,8 +48,8 @@ def post_detail(request, year, month, day, post):
             new_comment.post = post
             new_comment.save()
         ##if the request is empty, aka an empty GET request, Django automatically supplies an empty form
-        else:
-            comment_form = CommentForm()
+    else:
+        comment_form = CommentForm()
 
 
     return render(request,
