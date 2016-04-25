@@ -63,6 +63,13 @@
                 <div class="col-sm-4">
                     <h3>Meine Post</h3>
                     <p>Hier ist eine Spalte mit den vom User verfassten Posts</p>
+
+                    {% for post in posts %}
+                    {% if post.author == request.user%}
+                        <h3>{{post.title}}</h3>
+                    {% endif %}
+                    {% endfor %}
+
                 </div>
                 <div class="col-sm-3">
                     <h3>Meine Tags, Kommentare und Likes</h3>
