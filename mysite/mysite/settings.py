@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'website',
     'django.contrib.sites',
     'django.contrib.sitemaps',
-    'account',
 ]
 
 MIDDLEWARE_CLASSES = [
