@@ -1,62 +1,32 @@
-.date{
-    color: #888;
-    font-style: italic;
+
+#content{
+	margin-right: 100px;
+	flex:4;
 }
 
-.title_list{
-    color: #008fff;
-    text-decoration: none;
-    font-size: 200;
+#sidebar{
+	border-left: 1px solid cornflowerblue;
+	padding-left: 40px;
 }
 
-title_list:hover{
-    text-decoration: none;
-}
+@media screen and (max-width: 800px) {
+    .container {
+		-webkit-box-orient:vertical;
+		-webkit-box-direction:normal;
+		-webkit-flex-direction:column;
+		    -ms-flex-direction:column;
+		        flex-direction:column;
+    }
 
-#listview_post{
-    margin-top: 8%;
-}
+	#sidebar {
+		border-left:none;
+		padding-left:0px;
+	}
 
-form{
-    margin-left: 8%;
-    margin-top: 8%;
+	#content{
+		margin-right:0;
+	}
 }
-
-input[type="text"], input[type="email"], input[type="tel"], input[type="date"] {
-	display:block;
-    width:90%;
-    border-radius: 5px;
-	margin-bottom:10px;
-	background-color: rgba(200, 200, 200, 0.7);
-}
-
-textarea{
-    width: 90%;
-}
-
-body{
-    background-color: #fff;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.pageheader-title{
-    color: #008fff;
-}
-
-#main-block{
-    background-color: #eee;
-    border-radius: 5px;
-    margin-top: 2%;
-    margin-bottom: 5%;
-}
-
-#side-block{
-    background-color: #eee;
-    border-radius: 5px;
-    margin-top: 2%;
-    margin-left: 10px;
-}
-
 #create_block{
     background-color: #eee;
     border-radius: 5px;
@@ -64,51 +34,150 @@ body{
     margin-right: 10px;
 }
 
-h4{
-    text-decoration: underline;
+.topnav {
+    font-size: 14px;
 }
 
-.list-header{
-    font-size: 430%;
-    color: #1db992;
-    margin-top: 0%;
+.lead {
+    font-size: 18px;
+    font-weight: 400;
 }
 
-#comment-block{
-    margin: 5%;
+.intro-header {
+    padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+    padding-bottom: 50px;
+    text-align: center;
+    color: #f8f8f8;
+    background: url(../img/intro-bg.jpg) no-repeat center center;
+    background-size: cover;
 }
 
-#comment-info{
-    font-size: 110%;
-    font-weight: bold;
+.intro-message {
+    position: relative;
+    padding-top: 20%;
+    padding-bottom: 20%;
 }
 
-#comment-content{
-    background-color: #f6f6f6;
-    border-radius: 5px;
-    padding: 2%;
+.intro-message > h1 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 5em;
 }
 
-#share-link{
-    font-weight: bold;
+.intro-divider {
+    width: 400px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-#add-comment{
-    margin-top: 3%;
+.intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
 }
 
-.back{
-    margin-top: 2%;
+@media(max-width:767px) {
+    .intro-message {
+        padding-bottom: 15%;
+    }
+
+    .intro-message > h1 {
+        font-size: 3em;
+    }
+
+    ul.intro-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.intro-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+
+    .intro-divider {
+        width: 100%;
+    }
 }
 
-.detail-title{
-    margin-top: 2%;
+.network-name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
 }
 
-#count-comment{
-    margin-top: 7%;
+.content-section-a {
+    padding: 50px 0;
+    background-color: #f8f8f8;
 }
 
-#similar-posts{
-    margin-top: 7%;
+.content-section-b {
+    padding: 50px 0;
+    border-top: 1px solid #e7e7e7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+.section-heading {
+    margin-bottom: 30px;
+}
+
+.section-heading-spacer {
+    float: left;
+    width: 200px;
+    border-top: 3px solid #e7e7e7;
+}
+
+.banner {
+    padding: 100px 0;
+    color: #f8f8f8;
+    background: url(../img/banner-bg.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.banner h2 {
+    margin: 0;
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-size: 3em;
+}
+
+.banner ul {
+    margin-bottom: 0;
+}
+
+.banner-social-buttons {
+    float: right;
+    margin-top: 0;
+}
+
+@media(max-width:1199px) {
+    ul.banner-social-buttons {
+        float: left;
+        margin-top: 15px;
+    }
+}
+
+@media(max-width:767px) {
+    .banner h2 {
+        margin: 0;
+        text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+        font-size: 3em;
+    }
+
+    ul.banner-social-buttons > li {
+        display: block;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    ul.banner-social-buttons > li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+footer {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+}
+
+p.copyright {
+    margin: 15px 0 0;
 }
