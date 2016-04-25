@@ -25,9 +25,15 @@
                     <li>
                         <a href="/contact/">Kontakt</a>
                     </li>
+
+
                     <li>
-                        <a href="/account/login">Login</a>
-                    </li>
+            {% if request.user.is_authenticated %}
+                <a href="{% url 'logout' %}">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}">Log-in</a>
+            {% endif %}
+            </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

@@ -169,3 +169,7 @@ footer {
 p.copyright {
     margin: 15px 0 0;
 }
+
+p#logged-out {
+    color:red;
+}
