@@ -173,3 +173,7 @@ p.copyright {
 p#logged-out {
     color:red;
 }
+
+div#create_block.col-sm-1 {
+    border:1px solid rebeccapurple;
+}
