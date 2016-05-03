@@ -169,3 +169,11 @@ footer {
 p.copyright {
     margin: 15px 0 0;
 }
+
+p#logged-out {
+    color:red;
+}
+
+div#create_block.col-sm-1 {
+    border:1px solid rebeccapurple;
+}
