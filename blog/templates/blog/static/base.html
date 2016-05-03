@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static "blog.css"%}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css'%}">
+    <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap.min.css.map'%}">
+    <link rel="stylesheet" href="{% static 'bootstrap/dist/css/bootstrap-theme.min.css'%}">
+</head>
+<body>
+    <div class="container">
+        <div id="content">
+            {% block content %}
+
+            {% endblock %}
+        </div>
+        <div id="sidebar">
+            <h2>SIDEBAR: My blog</h2>
+            <p>This is my blog</p>
+        </div>
+    </div><!--main_end-->
+</body>
+</html>

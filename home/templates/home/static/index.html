@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+    <title>My Home Page</title>
+	<link rel="stylesheet" type="text/css" href="/static/bootstrap/dist/css/bootstrap.min.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/dist/css/bootstrap-theme.min.css" media="screen" />
+
+</head>
+<body>
+<div class="container">
+    <div id="content">
+        <h1>Welcome to my Django- Powered site</h1>
+
+        <p class="text">
+        This is my first Django- Powered site. By Clicking on the link below you
+        can access the blog which is part of this site.
+        </p>
+
+        <h3>Here be my blog</h3>
+        <a href="{% url 'blog:post_list' %}">I am a link</a>
+        </div>
+    </div> <!--content-->
+
+</body>
+</html>
