@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -51,17 +50,9 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
-<<<<<<< HEAD
-=======
 *.pyc
 *.pyo
 *.log
 *.pot
 
-.idea/
->>>>>>> 30ed540a1a5cee7951b89500c0355f62a77ee54b
-=======
-
-*.iml
-.idea/*
->>>>>>> dev20160425account
+/venv
